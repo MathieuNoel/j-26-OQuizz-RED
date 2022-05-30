@@ -18,42 +18,68 @@ require('dotenv').config();
 
 // ACTIVE RECORD
 
-const Level = require('./app/models/level');
+const User = require('./app/models/user');
 
-Level.findAll()
-.then(levelsList => {
 
-    console.log(levelsList.map(el => ({id: el.id, name: el.name})));
+//                 pour findAllUser
+//User.findAllUser().then(console.log).catch(console.error)
 
-})
-.catch(console.error);
 
-// Level.findById(10)
-// .then(level => {
 
-//     console.log('LEVEL TO DELETE >>> ', level.id, level);
 
-//     level.delete()
-//     .then(deletedLevel => {
-//         console.log('DELETED LEVEL >>>', deletedLevel);
+//            pour findById
+// User.findById(3).then(console.log).catch(console.error)
+
+
+
+
+
+
+//                 pour insert
+// User.insert('aluminox@gmx.fr', 'oquizpass', 'oquizname', 'oquizlastname')
+// .then(
+
+//     console.log
+
+// )
+// .catch(console.error);
+
+
+
+
+
+//                 pour delete
+// User.findById(4)
+// .then(user => {
+
+//     console.log('USER TO DELETE >>> ', user.id, user);
+
+//     user.delete()
+//     .then(deletedUser => {
+//         console.log('DELETED USER >>>', deletedUser);
 //     })
 //     .catch(console.error);
 
 // })
 // .catch(console.error);
 
-// const superExpert = new Level({name: 'Super Expert 11'}); // pas d'id
-// superExpert.insert()
-// .then((savedLevel) => {
+
+
+//                 pour insert
+// const newUser = new User({email: 'bluminox@gmx.fr', password:'boquizpass', firstname: 'boquizname',lastname: 'boquizlastname'}); // pas d'id
+// newUser.insert()
+// .then((newUser) => {
 //     // Super expert => id N
-//     console.log('NEW CREATED LEVEL', savedLevel.id, savedLevel.name);
+//     console.log('NEW CREATED USER', )
 
-//     savedLevel.name = 'Niveau test';
-//     savedLevel.update()
-//     .then(updatedLevel => {
-//         console.log('UPDATED LEVEL', {id: updatedLevel.id, name: updatedLevel.name});
-//     })
-//     .catch(console.error);
+// })
+// .catch(console.error);
 
+
+
+//                 pour update 
+// const newUser = new User({email: 'bluminox@gmx.fr', password:'boquizpass', firstname: 'boquizname', lastname: 'boquizlastname'}); // pas d'id
+// newUser.update().then((newUser) => {
+//     console.log('NEW updated USER')
 // })
 // .catch(console.error);
