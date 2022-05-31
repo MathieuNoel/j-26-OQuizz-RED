@@ -51,19 +51,19 @@ const User = require('./app/models/user');
 
 
 //                 pour delete
-User.findById(1)
-.then(user => {
+// User.findById(1)
+// .then(user => {
 
-    console.log('USER TO DELETE >>> ',  user);
+//     console.log('USER TO DELETE >>> ',  user);
 
-    user.delete()
-    .then(deletedUser => {
-        console.log('DELETED USER >>>', deletedUser);
-    })
-    .catch(console.error);
+//     user.delete()
+//     .then(deletedUser => {
+//         console.log('DELETED USER >>>', deletedUser);
+//     })
+//     .catch(console.error);
 
-})
-.catch(console.error);
+// })
+// .catch(console.error);
 
 
 
@@ -81,7 +81,7 @@ User.findById(1)
 
 //                 pour update 
 // const newUser = new User({email: 'bluminox@gmx.fr', password:'boquizpass', firstname: 'boquizname', lastname: 'boquizlastname'}); // pas d'id
-// newUser.update().then((newUser) => {
+// User.update({email: 'bluminox@gmx.fr', password:'boquizpass', firstname: 'boquizname', lastname: 'boquizlastname'}).then((newUser) => {
 //     console.log('NEW updated USER')
 // })
 // .catch(console.error);

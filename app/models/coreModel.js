@@ -119,6 +119,37 @@ class CoreModel {
         };    
     };
 
+    static async update(obj) {
+        const dollars= [];
+        let i = 1;
+        const keys = [];
+        const values= [];
+        for(const key in obj) {
+            values.push(obj[key]);
+            keys.push(key);
+            dollars.push(`$${i}`);
+            i++;
+        }
+        console.log('lululul',dollars, keys,values)
+        console.log(this.tableName)
+        const query = {            
+            text: `UPDATE "${this.tableName}" SET (${keys}) = (${dollars})  RETURNING "id"`,
+            values 
+        }
+        try {
+            
+            const result = await client.query(query);
+            console.log('lalala',result)
+            if (result.rowCount <= 0) {
+                throw new Error('Insert did not return any id.');
+            }
+            return
+        } catch (error) {
+            throw error
+        };
+        
+   }
+
 }
 
 module.exports = CoreModel;

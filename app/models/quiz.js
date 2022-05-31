@@ -5,6 +5,7 @@ class Quiz extends CoreModel {
     title;
     description;
     user_id;
+    static  #tableName = 'user';
 
     constructor(obj) {
         super(obj);
@@ -13,6 +14,9 @@ class Quiz extends CoreModel {
         this.user_id = obj.user_id;
     }
 
+    static get tableName() {
+        return this.#tableName
+    }
 }
 
 module.exports = Quiz;

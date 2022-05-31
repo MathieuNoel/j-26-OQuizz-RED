@@ -10,7 +10,7 @@ class User extends CoreModel {
     firstname;
     lastname;
     static  #tableName = 'user';
-    tableName = 'user';
+    
 
     constructor(obj) {
         super(obj);
@@ -35,22 +35,7 @@ class User extends CoreModel {
    
 
 
-    async update() {
-         const query = {
-             text: 'UPDATE "user" SET "email" = $1, "password" = $2, "firstname" = $3, "lastname" = $4  RETURNING "id"',
-             values: [this.email, this.password, this.firstname, this.lastname]
-         }
-         try {
-             const result = await client.query(query);
-             if (result.rowCount <= 0) {
-                 throw new Error('Insert did not return any id.');
-             }
-             return
-         } catch (error) {
-             throw error
-         };
-         
-    }
+   
 
 }
 

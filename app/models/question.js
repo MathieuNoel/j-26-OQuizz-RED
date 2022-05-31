@@ -8,6 +8,7 @@ class Question extends CoreModel {
     level_id;
     answer_id;
     quiz_id;
+    static  #tableName = 'user';
 
     constructor(obj) {
         super(obj)
@@ -17,6 +18,9 @@ class Question extends CoreModel {
         this.level_id = obj.level_id;
         this.answer_id = obj.answer_id;
         this.quiz_id = obj.quiz_id;
+    }
+    static get tableName() {
+        return this.#tableName
     }
 
 }
