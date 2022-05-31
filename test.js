@@ -21,14 +21,15 @@ require('dotenv').config();
 const User = require('./app/models/user');
 
 
+
 //                 pour findAllUser
-//User.findAllUser().then(console.log).catch(console.error)
+//  User.findAll().then(console.log).catch(console.error)
 
 
 
 
 //            pour findById
-// User.findById(3).then(console.log).catch(console.error)
+//User.findById(3).then(console.log).catch(console.error)
 
 
 
@@ -36,7 +37,8 @@ const User = require('./app/models/user');
 
 
 //                 pour insert
-// User.insert('aluminox@gmx.fr', 'oquizpass', 'oquizname', 'oquizlastname')
+// User.insert({ description: 'bla',
+//     question_id: 5})
 // .then(
 
 //     console.log
@@ -49,19 +51,19 @@ const User = require('./app/models/user');
 
 
 //                 pour delete
-// User.findById(4)
-// .then(user => {
+User.findById(1)
+.then(user => {
 
-//     console.log('USER TO DELETE >>> ', user.id, user);
+    console.log('USER TO DELETE >>> ',  user);
 
-//     user.delete()
-//     .then(deletedUser => {
-//         console.log('DELETED USER >>>', deletedUser);
-//     })
-//     .catch(console.error);
+    user.delete()
+    .then(deletedUser => {
+        console.log('DELETED USER >>>', deletedUser);
+    })
+    .catch(console.error);
 
-// })
-// .catch(console.error);
+})
+.catch(console.error);
 
 
 

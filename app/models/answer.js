@@ -4,6 +4,7 @@ class Answer extends CoreModel {
 
     description;
     question_id;
+    static  #tableName = 'answer';
 
     constructor(obj) {
         super(obj);
@@ -17,6 +18,10 @@ class Answer extends CoreModel {
             throw new Error('Answer.question_id must be an integer!');
         }
         this.question_id = obj.question_id;
+    }
+
+    static get tableName() {
+        return this.#tableName
     }
 
 }
